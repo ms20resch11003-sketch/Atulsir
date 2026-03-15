@@ -45,14 +45,88 @@ nav a:hover {
     color: var(--accent);
 }
 
-/* Header */
-header {
-    background: var(--primary);
-    color: white;
-    padding: 60px 5%;
-    text-align: center;
-    border-bottom: 5px solid var(--accent);
+/* Hero Banner Main Structure */
+.hero-banner {
+    position: relative;
+    height: 70vh;
+    /* Banner covers 70% of viewport height */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    /* Center content overlay vertically */
+    justify-content: center;
+    /* Center content overlay horizontally */
 }
+
+/* Three Side-by-Side Images Grid */
+.image-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+    /* Images stay behind content */
+}
+
+.image-panel {
+    flex: 1;
+    /* Each panel takes up 1/3 of the width */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(60%);
+    /* Subtle darkening for overall banner feel */
+}
+
+/* Customize specific panels (Optional: if images are too bright) */
+.panel-2 {
+    filter: brightness(50%);
+    /* Darken center panel slightly more */
+}
+
+/* Solid Background Content Overlay */
+.content-overlay {
+    position: relative;
+    z-index: 2;
+    /* Sits above the image grid */
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Solid dark background with slight transparency for depth */
+    padding: 60px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    max-width: 800px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle definition border */
+}
+
+.content-overlay h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.content-overlay .badge {
+    background-color: #005c23;
+    /* Dark green theme */
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.legacy {
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 15px 0 30px;
+}
+
 
 /* Layout Sections */
 section {
@@ -889,3 +963,4 @@ nav a:hover {
     color: var(--primary);
     /* Darkens the link on hover */
 }
+
