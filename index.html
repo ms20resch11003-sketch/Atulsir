@@ -30,7 +30,7 @@
         </div>
 
         <div class="content-overlay">
-            <h1>Professor Atul Suresh Deshpande</h1>
+            <h1>Atul Suresh Deshpande</h1>
             <p>Department of Materials Science & Metallurgical Engineering</p>
             <p>Indian Institute of Technology Hyderabad</p>
 
@@ -48,7 +48,7 @@
                 <p>Professor Deshpande is affiliated with IITH with extensive international research experience from
                     the <strong>Max Planck Institute</strong> (Germany) and the <strong>University of
                         Pittsburgh</strong> (USA). His work focuses on the synthesis and structural
-                    analysis of novel materials for energy and biomimetic applications.</p>
+                    analysis of novel materials for energy and biomimetic or nature inspired applications.</p>
 
                 <h4>Education</h4>
                 <ul class="edu-list">
@@ -79,10 +79,16 @@
                 <p>Our work is currently driven by three primary pillars:</p>
 
                 <ul class="focus-list">
-                    <li><strong>Chemistry:</strong> Exploring the synthesis and properties of novel materials.</li>
-                    <li><strong>Materials Science:</strong> Understanding the structure-property relationships in
-                        advanced materials.</li>
-                    <li><strong>Engineering:</strong> Bridging the gap between theoretical frameworks and practical
+                    <li><strong>Nanoparticle synthesis:</strong> Synthesis of novel multicomponent oxide (high entropy
+                        oxide) and
+                        high entropy alloy nanoparticles, their detailed structural analysis and analysis of their
+                        functional properties.</li>
+                    <li><strong>Carbon Materials:</strong> Understanding the structure-property relationships in
+                        advanced materials. Generation of nanostructured carbon materials for energy storage
+                        applications </li>
+                    <li><strong>Biomaterials:</strong> Biomimetic approaches for the generation of materials for
+                        superhydrophobic surfaces and coatings. Bridging the gap between theoretical frameworks and
+                        practical
                         applications.</li>
                 </ul>
             </div>
@@ -90,43 +96,65 @@
     </section>
     <section id="research-topics">
         <h2>Core Research Areas</h2>
-
         <div class="two-col-grid">
+
             <div class="topic-card">
-                <div class="topic-img-wrapper">
-                    <img src="carbontree.jpg" alt="Structure of Carbon Nanoparticles" class="topic-img">
+                <div class="topic-slideshow">
+                    <img src="Design.jpg" alt="Research 1" class="slide active">
+                    <img src="carbontree.jpg" alt="Research 2" class="slide">
+                    <img src="mwcnt.jpg" alt="Research 2" class="slide">
+                    <img src="MWCNT1.jpg" alt="Research 2" class="slide">
+                    <img src="wrinkled carbon nanosheet1.gif" alt="Research 2" class="slide">
+
+
+                    <button class="slide-btn prev">&#10094;</button>
+                    <button class="slide-btn next">&#10095;</button>
                 </div>
+
                 <div class="topic-content">
                     <h3>Carbon Nanoparticles</h3>
-                    <p>Carbon nanoparticles exhibit unique optical, electrical, and structural properties. Our research
+                    <p>The study of struture property relation in carbon nanomaterials. Our research
                         investigates their fundamental characteristics, focusing on their synthesis, functionalization,
                         and behavior at the nanoscale.</p>
                     <ul class="topic-list">
-                        <li>Synthesis and characterization</li>
-                        <li>Surface functionalization</li>
+                        <li>Programing the synthesis route</li>
+                        <li>Controlled growth mechanisms</li>
                         <li>Pore engineering</li>
                     </ul>
                 </div>
             </div>
-
             <div class="topic-card">
-                <div class="topic-img-wrapper">
-                    <img src="Design.jpg" alt="Computational modeling of nanoparticles" class="topic-img">
+                <div class="topic-slideshow">
+                    <img src="HE.gif" alt="Research 1" class="slide active">
+                    <img src="Y-HEC NPs sol.gif" alt="Research 2" class="slide">
+                    <img src="Ce-HEC NP sol.jpg" alt="Research 3" class="slide">
+                    <img src="HE2.jpg" alt="Research 2" class="slide">
+                    <img src="HE3.jpg" alt="Research 2" class="slide">
+                    <img src="HE4.jpg" alt="Research 2" class="slide">
+
+                    <button class="slide-btn prev">&#10094;</button>
+                    <button class="slide-btn next">&#10095;</button>
                 </div>
+
                 <div class="topic-content">
-                    <h3>Designing Carbon Nanoparticles</h3>
-                    <p>Through advanced synthesis routes and novel approaches, we tailor the properties of carbon
-                        nanomaterials for specific applications. This involves predicting process-structure
-                        relationships and
-                        optimizing material performance through synthesis.</p>
+                    <h3>High Entropy Alloys</h3>
+                    <p>High entropy alloys (HEAs) are a class of materials composed of multiple principal elements in
+                        roughly equal proportions. Our research focuses on the synthesis, characterization, and
+                        properties of these novel materials.</p>
                     <ul class="topic-list">
-                        <li>Rational material design</li>
-                        <li>Synthesis optimization</li>
-                        <li>Performance optimization</li>
+                        <li>Synthesis and characterization</li>
+                        <li>Application development</li>
+                        <li>Processing and forming techniques</li>
                     </ul>
                 </div>
             </div>
+
+
+
+
         </div>
+
+
     </section>
     <section id="affiliations" class="bg-light">
         <h2>Centres of Excellence</h2>
@@ -930,7 +958,57 @@
         <footer>
             <p>&copy; 2026 | Indian Institute of Technology Hyderabad</p>
         </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const slideshows = document.querySelectorAll('.topic-slideshow');
 
+                slideshows.forEach(slideshow => {
+                    const slides = slideshow.querySelectorAll('.slide');
+                    const prevBtn = slideshow.querySelector('.prev');
+                    const nextBtn = slideshow.querySelector('.next');
+
+                    const slideSpeed = 3500; // Changes image every 3.5 seconds
+                    let slideTimer;
+
+                    function switchSlide(step) {
+                        let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+                        slides[currentIndex].classList.remove('active');
+
+                        let nextIndex = currentIndex + step;
+                        if (nextIndex >= slides.length) nextIndex = 0;
+                        if (nextIndex < 0) nextIndex = slides.length - 1;
+
+                        slides[nextIndex].classList.add('active');
+                    }
+
+                    function startAutoSlide() {
+                        slideTimer = setInterval(() => {
+                            switchSlide(1);
+                        }, slideSpeed);
+                    }
+
+                    startAutoSlide(); // Start immediately
+
+                    // Manual controls
+                    prevBtn.addEventListener('click', () => {
+                        clearInterval(slideTimer);
+                        switchSlide(-1);
+                        startAutoSlide();
+                    });
+
+                    nextBtn.addEventListener('click', () => {
+                        clearInterval(slideTimer);
+                        switchSlide(1);
+                        startAutoSlide();
+                    });
+
+                    // Pause on hover
+                    slideshow.addEventListener('mouseenter', () => clearInterval(slideTimer));
+                    slideshow.addEventListener('mouseleave', () => startAutoSlide());
+                });
+            });
+        </script>
 </body>
+
 
 </html>
