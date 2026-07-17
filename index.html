@@ -113,11 +113,11 @@
 
                 <div class="topic-content">
                     <h3>Carbon Nanostructures</h3>
-                    <p>The study of struture property relation in carbon nanomaterials. Our research
+                    <p>The study of structure-property relationships in carbon nanomaterials. Our research
                         investigates their fundamental characteristics, focusing on their synthesis, functionalization,
                         and behavior at the nanoscale.</p>
                     <ul class="topic-list">
-                        <li>Programing the synthesis route</li>
+                        <li>Programming the synthesis route</li>
                         <li>Controlled growth mechanisms</li>
                         <li>Pore engineering</li>
                     </ul>
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="topic-content">
-                    <h3>High Entropy oxides</h3>
+                    <h3>High Entropy Oxides</h3>
                     <p>High-entropy oxides (HEOs) are a novel class of materials composed of multiple principal metal
                         elements in roughly equal proportions, all sharing a single oxygen structure. Our research
                         focuses on the synthesis, characterization, and
@@ -229,7 +229,7 @@
                         <div class="member-photo"><img src="Aditya.jpg" alt="Aditya Shyamala"></div>
                         <div class="member-info">
                             <h4>Aditya Shyamala</h4>
-                            <p>Research Focus: Materials with special wetability properties</p>
+                            <p>Research Focus: Materials with special wettability properties</p>
                         </div>
                     </div>
                     <div class="member-card">
@@ -284,7 +284,7 @@
                         <div class="member-photo"><img src="najathulla.jpg" alt="Najathulla BC"></div>
                         <div class="member-info">
                             <h4>Najathulla BC, PhD</h4>
-                            <p>Topic: Semiconducting polymers Actuators</p>
+                            <p>Topic: Semiconducting polymer Actuators</p>
                         </div>
                     </div>
                     <div class="member-card">
@@ -678,7 +678,7 @@
             </div>
         </section>
         <section id="social-media" class="bg-light">
-            <h2>Social media buzz</h2>
+            <h2>Social Media Buzz</h2>
 
             <h3 style="margin-top: 50px; color: var(--primary); text-align: center;">Recent Updates</h3>
 
@@ -692,7 +692,7 @@
                         </div>
                     </div>
                     <div class="social-image-wrapper">
-                        <img src="Linkidin.jpg" alt="LinkedIn Post Snapshot">
+                        <img src="linkedin.jpg" alt="LinkedIn Post Snapshot">
                     </div>
 
                     <a href="https://www.linkedin.com/posts/iithyderabad_iithyderabad-mousigning-sustainableinnovation-activity-7377692829495558144-fTya/"
@@ -757,7 +757,7 @@
                         <li><strong>Dr. Narendra Kurra:</strong> Energy storage materials.</li>
                         <li><strong>Prof. Chandrasekhar Sharma:</strong> Materials Chemistry.
                         </li>
-                        <li><strong>Prof. Peter Kingshot:</strong>Potoctalysis.
+                        <li><strong>Prof. Peter Kingshot:</strong> Photocatalysis.
                         </li>
 
                     </ul>
@@ -765,7 +765,7 @@
                 <div class="card">
                     <h3>Industry Partners</h3>
                     <ul>
-                        <li><strong>Maithri Aquatech:</strong> Development of nature based advance and sustainable
+                        <li><strong>Maithri Aquatech:</strong> Development of nature-based advanced and sustainable
                             solutions for Atmospheric Water Harvesting (AWH).</li>
                         <li><strong>ARCI Hyderabad:</strong> Development of Carbon-Metal oxide composites.
                         </li>
@@ -806,7 +806,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img src="FD.jpeg" Group Research Activity">
+                    <img src="FD.jpeg" alt="Group Research Activity">
 
                 </div>
                 <div class="gallery-item">
@@ -865,62 +865,61 @@
             <p><strong>Office:</strong>405, Department of Materials Science & Metallurgical Engineering</p>
             <p>Indian Institute of Technology Hyderabad, Kandi 502285, Telangana, India.</p>
             <p><strong>Email:</strong> atuldeshpande@msme.iith.ac.in</p>
-            </nav>
+        </section>
 
-            <footer>
-                <p>&copy; 2026 | Indian Institute of Technology Hyderabad</p>
-            </footer>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const slideshows = document.querySelectorAll('.topic-slideshow');
+        <footer>
+            <p>&copy; 2026 | Indian Institute of Technology Hyderabad</p>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const slideshows = document.querySelectorAll('.topic-slideshow');
 
-                    slideshows.forEach(slideshow => {
-                        const slides = slideshow.querySelectorAll('.slide');
-                        const prevBtn = slideshow.querySelector('.prev');
-                        const nextBtn = slideshow.querySelector('.next');
+                slideshows.forEach(slideshow => {
+                    const slides = slideshow.querySelectorAll('.slide');
+                    const prevBtn = slideshow.querySelector('.prev');
+                    const nextBtn = slideshow.querySelector('.next');
 
-                        const slideSpeed = 3500; // Changes image every 3.5 seconds
-                        let slideTimer;
+                    const slideSpeed = 3500; // Changes image every 3.5 seconds
+                    let slideTimer;
 
-                        function switchSlide(step) {
-                            let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
-                            slides[currentIndex].classList.remove('active');
+                    function switchSlide(step) {
+                        let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+                        slides[currentIndex].classList.remove('active');
 
-                            let nextIndex = currentIndex + step;
-                            if (nextIndex >= slides.length) nextIndex = 0;
-                            if (nextIndex < 0) nextIndex = slides.length - 1;
+                        let nextIndex = currentIndex + step;
+                        if (nextIndex >= slides.length) nextIndex = 0;
+                        if (nextIndex < 0) nextIndex = slides.length - 1;
 
-                            slides[nextIndex].classList.add('active');
-                        }
+                        slides[nextIndex].classList.add('active');
+                    }
 
-                        function startAutoSlide() {
-                            slideTimer = setInterval(() => {
-                                switchSlide(1);
-                            }, slideSpeed);
-                        }
-
-                        startAutoSlide(); // Start immediately
-
-                        // Manual controls
-                        prevBtn.addEventListener('click', () => {
-                            clearInterval(slideTimer);
-                            switchSlide(-1);
-                            startAutoSlide();
-                        });
-
-                        nextBtn.addEventListener('click', () => {
-                            clearInterval(slideTimer);
+                    function startAutoSlide() {
+                        slideTimer = setInterval(() => {
                             switchSlide(1);
-                            startAutoSlide();
-                        });
+                        }, slideSpeed);
+                    }
 
-                        // Pause on hover
-                        slideshow.addEventListener('mouseenter', () => clearInterval(slideTimer));
-                        slideshow.addEventListener('mouseleave', () => startAutoSlide());
+                    startAutoSlide(); // Start immediately
+
+                    // Manual controls
+                    prevBtn.addEventListener('click', () => {
+                        clearInterval(slideTimer);
+                        switchSlide(-1);
+                        startAutoSlide();
                     });
-                });
-            </script>
-</body>
 
+                    nextBtn.addEventListener('click', () => {
+                        clearInterval(slideTimer);
+                        switchSlide(1);
+                        startAutoSlide();
+                    });
+
+                    // Pause on hover
+                    slideshow.addEventListener('mouseenter', () => clearInterval(slideTimer));
+                    slideshow.addEventListener('mouseleave', () => startAutoSlide());
+                });
+            });
+        </script>
+</body>
 
 </html>
